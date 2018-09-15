@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace cis237_assignment1
 {
-    class Program
+    class CSVProcessor
     {
-        static void Main(string[] args)
-        {
-
-        }
     }
 }
