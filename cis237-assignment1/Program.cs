@@ -94,33 +94,12 @@ namespace cis237_assignment1
                         break;
                     default:
                         Console.WriteLine("\n\n\t\t\t\t\t\tInvalid option. Please select from the above menu.");
-                        //validChoice = false;
                         System.Threading.Thread.Sleep(1500);
                         DisplayMenu();
                         Environment.Exit(0);
                         break;
                 }
-            }
-            //aMenu.HandleInput(menuChoice);
-
-
-            // testing only
-
-            //string[] allBeverages = sodaStand.PrintTheBeveragesInventory();
-            //foreach (string beverageItem in allBeverages)
-            //{
-            //    Console.WriteLine(beverageItem);
-            //}
-            //Console.WriteLine("Test completed.");
-            //System.Threading.Thread.Sleep(3000);
-            //Console.WriteLine("Enter a beverage ID: ");
-            //string beverageID = Console.ReadLine();
-            //Console.WriteLine(sodaStand.FindBeverageById(beverageID));
-            //Console.WriteLine("Test completed.");
-            //System.Threading.Thread.Sleep(3000);
-
-            // end testing
-
+            }            
         }
     }
 }
