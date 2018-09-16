@@ -74,8 +74,19 @@ namespace cis237_assignment1
 
                         break;
                     case "S":
-                        Console.WriteLine("\n\n\t\t\t\t\t\tSearch beverage list.");
+                        Console.WriteLine("\n\n\t\t\t\t\t\tYou chose to (S)earch the beverage list.");
+                        if (!csvProcessor.listIsLoaded)
+                        {
+                            Console.Write(aMenu.NothingToSearch());
+                            System.Threading.Thread.Sleep(1500);
+                        }
+
+                        else
+                        {
+                            Console.Write(aMenu.SearchBeverageList(sodaStand));
+                        }                        
                         System.Threading.Thread.Sleep(1500);
+                        DisplayMenu();
                         break;
                     case "A":
                         Console.WriteLine("\n\n\t\t\t\t\t\tAdd to beverage list.");

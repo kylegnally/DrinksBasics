@@ -19,14 +19,14 @@ namespace cis237_assignment1
 
             if (active)
             {
-                this.Active = "true";
+                this.Active = "active";
             }
-            else this.Active = "false";
+            else this.Active = "inactive";
         }
 
         public override string ToString()
         {
-            ItemAsString = Id + ", " + Desc + ", " + Pack + ", " + Price.ToString() + ", " + Active;
+            ItemAsString = Id + ", " + Desc + ", " + Pack + ", " + "$" + Price.ToString() + ", " + Active;
             return ItemAsString;
         }
 
