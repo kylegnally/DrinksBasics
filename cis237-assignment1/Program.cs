@@ -35,7 +35,6 @@ namespace cis237_assignment1
                     case "L":
                         Console.WriteLine("\n\n\t\t\t\t\t\tYou chose to (L)oad the beverage list.");                        
                         bool loadedSuccessfully = csvProcessor.ImportCSV(pathToCSV, sodaStand);
-                        //Console.WriteLine("???");
                         if (loadedSuccessfully)
                         {
                             Console.Write(aMenu.LoadSuccess());
