@@ -21,6 +21,7 @@ namespace cis237_assignment1
             
 
             // testing only
+
             string[] allBeverages = sodaStand.PrintTheBeveragesInventory();
             foreach (string beverageItem in allBeverages)
             {
@@ -33,6 +34,7 @@ namespace cis237_assignment1
             Console.WriteLine(sodaStand.FindBeverageById(beverageID));
             Console.WriteLine("Test completed.");
             System.Threading.Thread.Sleep(3000);
+
             // end testing
 
         }

@@ -26,19 +26,15 @@ namespace cis237_assignment1
         public string[] PrintTheBeveragesInventory()
         {
             string[] allBeveragesString = new string[beveragesLength];
-            int lineCounter = 0;
 
-            if (beveragesLength > 0)
+            for (int i = 0; i < beverages.Length; i++)
             {
-                foreach (Beverage beverage in beverages)
+                if (beverages[i] != null)
                 {
-                    if (beverage != null)
-                    {
-                        allBeveragesString[lineCounter] = beverage.ToString();
-                        lineCounter++;
-                    }
+                    allBeveragesString[i] = beverages[i].ToString();
                 }
             }
+            
             return allBeveragesString;
         }
 
@@ -46,6 +42,7 @@ namespace cis237_assignment1
         {
             string foundBeverage = null;
 
+            // could be a foreach
             for (int i = 0; i < beverages.Length; i++)
             {
                 if (beverages[i] != null)
@@ -56,18 +53,7 @@ namespace cis237_assignment1
                     }
                 }                                             
             }
-
-            //foreach (Beverage beverage in beverages)
-            //{
-            //    if (beverage != null)
-            //    {
-            //        if (beverage.Id == id)
-            //        {
-            //            foundBeverage = beverage.ToString();
-            //        }
-            //    }
-            //}
-
+            
             return foundBeverage;
         }
         // this class will initialize the collection size (passed into constructor from Main), 
