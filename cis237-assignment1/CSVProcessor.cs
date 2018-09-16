@@ -30,6 +30,7 @@ namespace cis237_assignment1
                 {
                     this.processCSVLine(csvLine, sodaStand, counter++);
                 }
+                listIsLoaded = true;
                 return true;
             }
 
