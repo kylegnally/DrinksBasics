@@ -26,7 +26,7 @@
             {
                 if (beverages[i] != null)
                 {
-                    allBeveragesString[i] = beverages[i].ToString();
+                    allBeveragesString[i] = "\t\t\t\t" + beverages[i].ToString();
                 }
             }
             

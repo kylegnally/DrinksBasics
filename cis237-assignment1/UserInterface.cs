@@ -65,7 +65,8 @@ namespace cis237_assignment1
             string id = Console.ReadLine();
             if (collection.FindBeverageById(id) != null)
             {
-                foundBeverage = collection.FindBeverageById(id);
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                foundBeverage = "\n\t\t\t\t" + collection.FindBeverageById(id);
             }
             else
             {

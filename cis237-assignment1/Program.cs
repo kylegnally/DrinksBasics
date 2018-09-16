@@ -53,7 +53,7 @@ namespace cis237_assignment1
                         DisplayMenu();
                         break;
                     case "P":
-                        Console.WriteLine("\n\n\t\t\t\tYou chose to (P)rint the beverage list.");
+                        Console.WriteLine("\n\n\t\t\t\tYou chose to (P)rint the beverage list.\n");
                         if (!csvProcessor.listIsLoaded)
                         {
                             Console.Write(aMenu.NothingToPrint());
