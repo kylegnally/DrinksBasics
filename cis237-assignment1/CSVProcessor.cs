@@ -9,10 +9,18 @@ namespace cis237_assignment1
 {
     class CSVProcessor
     {
-        private StreamReader streamReader = null;
 
-        public bool ImportCSV(string pathToCSV, BeverageCollection[] beverages)
+        bool listIsLoaded;
+
+        public CSVProcessor()
         {
+            this.listIsLoaded = false;
+        }
+
+        public bool ImportCSV(string pathToCSV, BeverageCollection sodaStand)
+        {
+            StreamReader streamReader = null;
+
             try
             {
                 string csvLine;
@@ -20,7 +28,7 @@ namespace cis237_assignment1
                 int counter = 0;
                 while ((csvLine = streamReader.ReadLine()) != null)
                 {
-                    this.processCSVLine(csvLine, beverages, counter++);
+                    this.processCSVLine(csvLine, sodaStand, counter++);
                 }
                 return true;
             }
@@ -44,7 +52,7 @@ namespace cis237_assignment1
             }
         }
 
-        private void processCSVLine(string line, Beverage[] beverage, int index)
+        private void processCSVLine(string line, BeverageCollection sodaStand, int index)
         {
             // declare am array of parts that will contain the results of
             // splitting the string
@@ -62,7 +70,7 @@ namespace cis237_assignment1
             // write the method for this into the beverage collection class. This is what
             // will initially populate the collection with the beverages when the list is loaded
             // for the first time
-            //beverageCollection.AddNewItem(id, desc, pack, price, active);
+            sodaStand.AddABeverage(id, desc, pack, price, active);
         }
     }
 }
