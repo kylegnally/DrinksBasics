@@ -21,7 +21,7 @@ namespace cis237_assignment1
             {
                 System.Console.Clear();
                 Console.Write(aMenu.DisplayMenu());
-                Console.Write("\n\n\t\t\t\t\t\t");
+                Console.Write("\n\n\t\t\t\t");
                 menuChoice = Console.ReadLine();
                 HandleInput(menuChoice);
             }
@@ -33,7 +33,7 @@ namespace cis237_assignment1
                 switch (userSelection)
                 {
                     case "L":
-                        Console.WriteLine("\n\n\t\t\t\t\t\tYou chose to (L)oad the beverage list.");                        
+                        Console.WriteLine("\n\n\t\t\t\tYou chose to (L)oad the beverage list.");                        
                         bool loadedSuccessfully = csvProcessor.ImportCSV(pathToCSV, sodaStand);
                         if (loadedSuccessfully)
                         {
@@ -53,7 +53,7 @@ namespace cis237_assignment1
                         DisplayMenu();
                         break;
                     case "P":
-                        Console.WriteLine("\n\n\t\t\t\t\t\tYou chose to (P)rint the beverage list.");
+                        Console.WriteLine("\n\n\t\t\t\tYou chose to (P)rint the beverage list.");
                         if (!csvProcessor.listIsLoaded)
                         {
                             Console.Write(aMenu.NothingToPrint());
@@ -69,7 +69,7 @@ namespace cis237_assignment1
 
                         break;
                     case "S":
-                        Console.WriteLine("\n\n\t\t\t\t\t\tYou chose to (S)earch the beverage list.");
+                        Console.WriteLine("\n\n\t\t\t\tYou chose to (S)earch the beverage list.");
                         if (!csvProcessor.listIsLoaded)
                         {
                             Console.Write(aMenu.NothingToSearch());
@@ -84,16 +84,35 @@ namespace cis237_assignment1
                         DisplayMenu();
                         break;
                     case "A":
-                        Console.WriteLine("\n\n\t\t\t\t\t\tAdd to beverage list.");
+                        Console.WriteLine("\n\n\t\t\t\tYou chose to (A)dd to the beverage list.");
+                        if (!csvProcessor.listIsLoaded)
+                        {
+                            Console.Write(aMenu.CannotAddUntilLoaded());
+                            System.Threading.Thread.Sleep(1500);
+                        }
+                        else
+                        {
+                            string[] beverageToAdd = aMenu.AddABeverage();
+                            if (sodaStand.FindBeverageById(beverageToAdd[0]) == null)
+                            {
+                                sodaStand.AddABeverage(beverageToAdd[0], beverageToAdd[1], beverageToAdd[2], decimal.Parse(beverageToAdd[3]), bool.Parse(beverageToAdd[4]));
+                            }
+                            else
+                            {
+                                aMenu.BeverageExists();
+                            }
+                        }                        
                         System.Threading.Thread.Sleep(1500);
+                        DisplayMenu();
                         break;
                     case "Q":
-                        Console.WriteLine("\n\n\t\t\t\t\t\tExiting program.");
+                        Console.WriteLine("\n\n\t\t\t\tExiting program.");
                         System.Threading.Thread.Sleep(1500);
                         Environment.Exit(0);
                         break;
                     default:
-                        Console.WriteLine("\n\n\t\t\t\t\t\tInvalid option. Please select from the above menu.");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("\n\n\t\t\t\tInvalid option. Please select a valid option from the menu.");
                         System.Threading.Thread.Sleep(1500);
                         DisplayMenu();
                         Environment.Exit(0);

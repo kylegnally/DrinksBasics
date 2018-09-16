@@ -16,6 +16,7 @@
             beverages[beveragesLength] = new Beverage(id, desc, pack, price, active);
             beveragesLength++;
         }
+        
 
         public string[] PrintTheBeveragesInventory()
         {
