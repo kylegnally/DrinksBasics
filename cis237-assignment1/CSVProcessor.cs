@@ -10,7 +10,7 @@ namespace cis237_assignment1
     class CSVProcessor
     {
 
-        bool listIsLoaded;
+        public bool listIsLoaded = false;
 
         public CSVProcessor()
         {
@@ -21,36 +21,40 @@ namespace cis237_assignment1
         {
             StreamReader streamReader = null;
 
-            try
+            if (!listIsLoaded)
             {
-                string csvLine;
-                streamReader = new StreamReader(pathToCSV);
-                int counter = 0;
-                while ((csvLine = streamReader.ReadLine()) != null)
+                try
                 {
-                    this.processCSVLine(csvLine, sodaStand, counter++);
+                    string csvLine;
+                    streamReader = new StreamReader(pathToCSV);
+                    int counter = 0;
+                    while ((csvLine = streamReader.ReadLine()) != null)
+                    {
+                        this.processCSVLine(csvLine, sodaStand, counter++);
+                    }
+                    listIsLoaded = true;
+                    return true;
                 }
-                listIsLoaded = true;
-                return true;
-            }
 
-            catch (Exception e)
-            {
-                // output the exception
-                Console.WriteLine(e.ToString());
-                Console.WriteLine();
-                Console.WriteLine(e.StackTrace);
-                // return false because we failed
-                return false;
-            }
-
-            finally
-            {
-                if (streamReader != null)
+                catch (Exception e)
                 {
-                    streamReader.Close();
+                    // output the exception
+                    Console.WriteLine(e.ToString());
+                    Console.WriteLine();
+                    Console.WriteLine(e.StackTrace);
+                    // return false because we failed
+                    return false;
+                }
+
+                finally
+                {
+                    if (streamReader != null)
+                    {
+                        streamReader.Close();
+                    }
                 }
             }
+            else return false;
         }
 
         private void processCSVLine(string line, BeverageCollection sodaStand, int index)

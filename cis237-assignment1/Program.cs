@@ -11,29 +11,107 @@ namespace cis237_assignment1
         static void Main(string[] args)
         {
             const int sodaStandSize = 4000;
-            string pathToCSV = "../../../datafiles/beverage_list.csv";
+            string pathToCSV = "../../../datafiles/beverage_list_trunc.csv";
+            string menuChoice = null;
 
             UserInterface aMenu = new UserInterface();
-            BeverageCollection sodaStand = new BeverageCollection(4000);
+            BeverageCollection sodaStand = new BeverageCollection(sodaStandSize);
             CSVProcessor csvProcessor = new CSVProcessor();
 
-            csvProcessor.ImportCSV(pathToCSV, sodaStand);
-            
+            //csvProcessor.ImportCSV(pathToCSV, sodaStand);
+            DisplayMenu();
+
+            void DisplayMenu()
+            {
+                System.Console.Clear();
+                Console.Write(aMenu.DisplayMenu());
+                Console.Write("\n\n\t\t\t\t\t\t");
+                menuChoice = Console.ReadLine();
+                HandleInput(menuChoice);
+            }
+
+            void HandleInput(string userSelection)
+            {
+                //bool validChoice = true;
+                userSelection = userSelection.ToUpper();
+                switch (userSelection)
+                {
+                    case "L":
+                        Console.WriteLine("\n\n\t\t\t\t\t\tYou chose to (L)oad the beverage list.");                        
+                        bool loadedSuccessfully = csvProcessor.ImportCSV(pathToCSV, sodaStand);
+                        //Console.WriteLine("???");
+                        if (loadedSuccessfully)
+                        {
+                            Console.Write(aMenu.LoadSuccess());
+                        }
+                        else
+                        {                            
+                            if (csvProcessor.listIsLoaded == true)
+                            {
+                                Console.Write(aMenu.AlreadyLoaded());
+                            }
+
+                            else Console.Write(aMenu.LoadFailure());
+                        }                        
+                        
+                        System.Threading.Thread.Sleep(1500);
+                        DisplayMenu();
+                        break;
+                    case "P":
+                        Console.WriteLine("\n\n\t\t\t\t\t\tYou chose to (P)rint the beverage list.");
+                        if (!csvProcessor.listIsLoaded)
+                        {
+                            Console.Write(aMenu.NothingToPrint());
+                            System.Threading.Thread.Sleep(1500);
+                        }
+                        else
+                        {
+                            string[] allBeverages = sodaStand.PrintTheBeveragesInventory();
+                            aMenu.PrintBeverageList(allBeverages);
+                        }
+                        System.Threading.Thread.Sleep(1500);
+                        DisplayMenu();
+
+                        break;
+                    case "S":
+                        Console.WriteLine("\n\n\t\t\t\t\t\tSearch beverage list.");
+                        System.Threading.Thread.Sleep(1500);
+                        break;
+                    case "A":
+                        Console.WriteLine("\n\n\t\t\t\t\t\tAdd to beverage list.");
+                        System.Threading.Thread.Sleep(1500);
+                        break;
+                    case "Q":
+                        Console.WriteLine("\n\n\t\t\t\t\t\tExiting program.");
+                        System.Threading.Thread.Sleep(1500);
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        Console.WriteLine("\n\n\t\t\t\t\t\tInvalid option. Please select from the above menu.");
+                        //validChoice = false;
+                        System.Threading.Thread.Sleep(1500);
+                        DisplayMenu();
+                        Environment.Exit(0);
+                        break;
+                }
+            }
+            //aMenu.HandleInput(menuChoice);
+
 
             // testing only
 
-            string[] allBeverages = sodaStand.PrintTheBeveragesInventory();
-            foreach (string beverageItem in allBeverages)
-            {
-                Console.WriteLine(beverageItem);
-            }
-            Console.WriteLine("Test completed.");
-            System.Threading.Thread.Sleep(3000);
-            Console.WriteLine("Enter a beverage ID: ");
-            string beverageID = Console.ReadLine();
-            Console.WriteLine(sodaStand.FindBeverageById(beverageID));
-            Console.WriteLine("Test completed.");
-            System.Threading.Thread.Sleep(3000);
+            //string[] allBeverages = sodaStand.PrintTheBeveragesInventory();
+            //foreach (string beverageItem in allBeverages)
+            //{
+            //    Console.WriteLine(beverageItem);
+            //}
+            //Console.WriteLine("Test completed.");
+            //System.Threading.Thread.Sleep(3000);
+            //Console.WriteLine("Enter a beverage ID: ");
+            //string beverageID = Console.ReadLine();
+            //Console.WriteLine(sodaStand.FindBeverageById(beverageID));
+            //Console.WriteLine("Test completed.");
+            //System.Threading.Thread.Sleep(3000);
 
             // end testing
 
