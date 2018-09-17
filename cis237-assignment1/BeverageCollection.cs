@@ -1,26 +1,49 @@
 ﻿namespace cis237_assignment1
 {
+    /// <summary>
+    /// Beverage collection class. Handles adding a beverage to the collection, printing the beverage inventory, and
+    /// searching for a beverage by its ID. Future search functionality such as a FindBeverageByName() method should
+    /// be implemented here (this functionality is already supported by the Beverage class).
+    /// </summary>
     class BeverageCollection
     {
         Beverage[] beverages;
-        int beveragesLength;
+        int collectionPosition;
 
+        /// <summary>
+        /// Creates a new beverages array of type Beverage and of the size passed into it.
+        /// Sets the initial position of the array counter to 0 (the beginning of the array).
+        /// </summary>
+        /// <param name="collectionSize"></param>
         public BeverageCollection(int collectionSize)
         {
             beverages = new Beverage[collectionSize];
-            beveragesLength = 0;
+            collectionPosition = 0;
         }
 
+        /// <summary>
+        /// Adds a beverage to the collection. Note that collectionPosition is always incremented by 1 after adding a new beverage
+        /// to ensure the new beverage is always added at the end of the collection.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="desc"></param>
+        /// <param name="pack"></param>
+        /// <param name="price"></param>
+        /// <param name="active"></param>
         public void AddABeverage(string id, string desc, string pack, decimal price, bool active)
         {
-            beverages[beveragesLength] = new Beverage(id, desc, pack, price, active);
-            beveragesLength++;
+            beverages[collectionPosition] = new Beverage(id, desc, pack, price, active);
+            collectionPosition++;
         }
         
-
+        /// <summary>
+        /// Prints the entire inventory of beverages using the ToString() override method of the Beverage class.
+        /// Returns the entire inventory as a string[].
+        /// </summary>
+        /// <returns></returns>
         public string[] PrintTheBeveragesInventory()
         {
-            string[] allBeveragesString = new string[beveragesLength];
+            string[] allBeveragesString = new string[collectionPosition];
 
             for (int i = 0; i < beverages.Length; i++)
             {
@@ -33,6 +56,11 @@
             return allBeveragesString;
         }
 
+        /// <summary>
+        /// Searches for a Beverage in the collection by its id. Returns the Beverage as a string.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public string FindBeverageById(string id)
         {
             string foundBeverage = null;
@@ -52,11 +80,6 @@
             return foundBeverage;
         }
 
-        // You will want to add an "item already present" flag by making the search dual-purpose;
-        // if it returns anything at all following the search by ID, there's already a beverage with that ID
-        // and so the user cannot add one with the chosen ID.
-
-        // search by ID first, THEN add the new item, ELSE error out. Burp from the UI.
-
+        // Additional future search functionality should go here
     }
 }
