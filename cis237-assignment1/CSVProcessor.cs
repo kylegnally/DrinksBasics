@@ -55,7 +55,7 @@ namespace cis237_assignment1
 
         private void processCSVLine(string line, BeverageCollection sodaStand, int index)
         {
-            // declare am array of parts that will contain the results of
+            // declare an array of parts that will contain the results of
             // splitting the string
             string[] parts = line.Split(',');
 

@@ -1,9 +1,20 @@
-﻿using System;
+﻿/* 
+ * CIS237 Assignment 1 - Beverage List
+ * 9/17/18
+ * Kyle Nally
+ * CIS237 T/Th 330pm * 
+ */
+
+using System;
 
 namespace cis237_assignment1
 {
     class Program
     {
+        /// <summary>
+        /// Main program entry point.
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             const int sodaStandSize = 4000;
@@ -16,6 +27,7 @@ namespace cis237_assignment1
 
             DisplayMenu();
 
+            /// Displays the menu and calls HandleInput to deal with the user's response stored in the variable menuChoice.
             void DisplayMenu()
             {
                 System.Console.Clear();
@@ -25,12 +37,20 @@ namespace cis237_assignment1
                 HandleInput(menuChoice);
             }
 
+            /// Handles the user's input via a switch. Each menu function is encapsulated within each case. 
+            /// The work done on the user's choice is done in other classes; the output is handled by the
+            /// UserInterface class.
+            /// 
+            /// System.Threading.Thread.Sleep(1500) is used to pause the current thread long enough for the
+            /// user to read the output from their choice. All menu items result in some output to the user
+            /// (even when the user quits the program). Success messages are output in green text, errors
+            /// are output in red.
             void HandleInput(string userSelection)
             {
-                //bool validChoice = true;
                 userSelection = userSelection.ToUpper();
                 switch (userSelection)
                 {
+                    // Loads the beverage list. Note that this is the only location we call ImportCSV() from.
                     case "L":
                         Console.WriteLine("\n\n\t\t\t\tYou chose to (L)oad the beverage list.");                        
                         bool loadedSuccessfully = csvProcessor.ImportCSV(pathToCSV, sodaStand);
@@ -40,7 +60,10 @@ namespace cis237_assignment1
                             System.Threading.Thread.Sleep(1500);
                         }
                         else
-                        {                            
+                        {           
+                            // We don't want to try to reload the list again so we use the public boolean variable
+                            // that is set from within the class. We use this in any situation where we don't want
+                            // the user to do a thing until the list is loaded (add, search...).
                             if (csvProcessor.listIsLoaded == true)
                             {
                                 Console.Write(aMenu.AlreadyLoaded());
@@ -55,6 +78,7 @@ namespace cis237_assignment1
                         DisplayMenu();
                         break;
                     case "P":
+                        // Print the list. Burp if the list isn't loaded yet.
                         Console.WriteLine("\n\n\t\t\t\tYou chose to (P)rint the beverage list.\n");
                         if (!csvProcessor.listIsLoaded)
                         {
@@ -71,6 +95,7 @@ namespace cis237_assignment1
 
                         break;
                     case "S":
+                        // Search the list. Burp if the list isn't loaded yet.
                         Console.WriteLine("\n\n\t\t\t\tYou chose to (S)earch the beverage list.");
                         if (!csvProcessor.listIsLoaded)
                         {
@@ -86,6 +111,7 @@ namespace cis237_assignment1
                         DisplayMenu();
                         break;
                     case "A":
+                        // Add to the list. Burp if the list isn't loaded yet.
                         if (!csvProcessor.listIsLoaded)
                         {
                             Console.Write(aMenu.CannotAddUntilLoaded());
@@ -109,11 +135,15 @@ namespace cis237_assignment1
                         System.Threading.Thread.Sleep(1500);
                         DisplayMenu();
                         break;
+                        // Quit the program. Quits regardless of whether the list is loaded. Never burps.
                     case "Q":
                         Console.WriteLine("\n\n\t\t\t\tExiting program.");
                         System.Threading.Thread.Sleep(1500);
                         Environment.Exit(0);
                         break;
+
+                        // The default option is invoked for any choices noton the menu. This may be an invalid
+                        // entry or a blank entry. In either case, error is shown in red and the menu is simply redrawn.
                     default:
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("\n\n\t\t\t\tInvalid option. Please select a valid option from the menu.");
