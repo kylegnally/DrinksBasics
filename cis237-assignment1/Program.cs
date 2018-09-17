@@ -30,7 +30,7 @@ namespace cis237_assignment1
             /// Displays the menu and calls HandleInput to deal with the user's response stored in the variable menuChoice.
             void DisplayMenu()
             {
-                System.Console.Clear();
+                Console.Clear();
                 Console.Write(aMenu.DisplayMenu());
                 Console.Write("\n\n\t\t\t\t");
                 menuChoice = Console.ReadLine();
@@ -64,7 +64,7 @@ namespace cis237_assignment1
                             // We don't want to try to reload the list again so we use the public boolean variable
                             // that is set from within the class. We use this in any situation where we don't want
                             // the user to do a thing until the list is loaded (add, search...).
-                            if (csvProcessor.listIsLoaded == true)
+                            if (csvProcessor.listIsLoaded)
                             {
                                 Console.Write(aMenu.AlreadyLoaded());
                                 System.Threading.Thread.Sleep(1500);

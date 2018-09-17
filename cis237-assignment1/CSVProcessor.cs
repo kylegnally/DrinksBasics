@@ -3,9 +3,16 @@ using System.IO;
 
 namespace cis237_assignment1
 {
+    /// <summary>
+    /// Class to handle processing a CSV file. 
+    /// </summary>
     class CSVProcessor
     {
 
+        /// <summary>
+        /// This public bool is used in Main() as a flag to check whether the list is loaded and forbid the user
+        /// from taking certain actions until the flag is true. 
+        /// </summary>
         public bool listIsLoaded = false;
 
         public CSVProcessor()
@@ -13,6 +20,14 @@ namespace cis237_assignment1
             this.listIsLoaded = false;
         }
 
+        /// <summary>
+        /// Public method to import the CSV. Checks to see if the list is NOT loaded; if it isn't, it
+        /// sends the CSV one line at a time to the ImportCSV() method. If the CSV is already loaded
+        /// this method returns false.
+        /// </summary>
+        /// <param name="pathToCSV"></param>
+        /// <param name="sodaStand"></param>
+        /// <returns></returns>
         public bool ImportCSV(string pathToCSV, BeverageCollection sodaStand)
         {
             StreamReader streamReader = null;
@@ -53,6 +68,14 @@ namespace cis237_assignment1
             else return false;
         }
 
+        /// <summary>
+        /// Processes one line of the CSV file. Splits the line by delimiters (',') and stores each part
+        /// as a member of a string array. Automatically parses price to decimal and active/inactive to bool.
+        /// Lastly, calls the collection's AddABeverage() method and adds the beverage to the collection.  
+        /// </summary>
+        /// <param name="line"></param>
+        /// <param name="sodaStand"></param>
+        /// <param name="index"></param>
         private void processCSVLine(string line, BeverageCollection sodaStand, int index)
         {
             // declare an array of parts that will contain the results of
