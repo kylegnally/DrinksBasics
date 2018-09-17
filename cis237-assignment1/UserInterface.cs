@@ -2,10 +2,18 @@
 
 namespace cis237_assignment1
 {
+    /// <summary>
+    /// Class to provide a user interface for the user to interact with.
+    /// </summary>
     class UserInterface
     {
         string menuString;
 
+        /// <summary>
+        /// Displays the program menu.
+        /// Returns the menu as a string.
+        /// </summary>
+        /// <returns></returns>
         public string DisplayMenu()
         {
             Console.ResetColor();
@@ -19,6 +27,10 @@ namespace cis237_assignment1
             return menuString;
         }
 
+        /// <summary>
+        /// Called if the beverage list is already loaded. Returns an error string.
+        /// </summary>
+        /// <returns></returns>
         public string AlreadyLoaded()
         {
             Console.ForegroundColor = ConsoleColor.Red;
@@ -26,6 +38,10 @@ namespace cis237_assignment1
             return alreadyLoadedError;
         }
 
+        /// <summary>
+        /// Called if the list has loaded successfully. Returns a string.
+        /// </summary>
+        /// <returns></returns>
         public string LoadSuccess()
         {
             Console.ForegroundColor = ConsoleColor.Green;
@@ -33,6 +49,10 @@ namespace cis237_assignment1
             return listLoadSuccess;
         }
 
+        /// <summary>
+        /// Called if the beverage list has failed to load for some reason. Returns a string.
+        /// </summary>
+        /// <returns></returns>
         public string LoadFailure()
         {
             Console.ForegroundColor = ConsoleColor.Red;
@@ -40,6 +60,10 @@ namespace cis237_assignment1
             return listLoadFailure;
         }
 
+        /// <summary>
+        /// Called if the user tries to print a list while the list is empty. Contains a suggestion to load the list. Returns a string.
+        /// </summary>
+        /// <returns></returns>
         public string NothingToPrint()
         {
             Console.ForegroundColor = ConsoleColor.Red;
@@ -48,6 +72,10 @@ namespace cis237_assignment1
             return printError;
         }
 
+        /// <summary>
+        /// Method to print the beverage list. Writes each line to the length of the beverage list.
+        /// </summary>
+        /// <param name="allBeverages"></param>
         public void PrintBeverageList(string[] allBeverages)
         {
             for (int i = 0; i < allBeverages.Length; i++)
@@ -59,6 +87,11 @@ namespace cis237_assignment1
             }
         }
 
+        /// <summary>
+        /// Method to search the beverage list by ID. Returns a string showing whether the item was found or not.
+        /// </summary>
+        /// <param name="collection"></param>
+        /// <returns></returns>
         public string SearchBeverageList(BeverageCollection collection)
         {
             string foundBeverage = "";
@@ -77,6 +110,10 @@ namespace cis237_assignment1
             return foundBeverage;            
         }
 
+        /// <summary>
+        /// Called when the user tries to search an empty beverage list. Contains a suggestion to load the list. Returns a string.
+        /// </summary>
+        /// <returns></returns>
         public string NothingToSearch()
         {
             Console.ForegroundColor = ConsoleColor.Red;
@@ -85,6 +122,12 @@ namespace cis237_assignment1
             return searchError;
         }
 
+        /// <summary>
+        /// Called when the user wishes to add a new beverage to the list. Asks the user to prove each property required by the params of
+        /// the Beverage class. Prevents the user from entering empty entries by restarting the process if a required param is not provided.
+        /// Returns a string[].
+        /// </summary>
+        /// <returns></returns>
         public string[] AddABeverage()
         {
             Console.Clear();
