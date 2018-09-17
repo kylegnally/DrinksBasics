@@ -38,7 +38,7 @@ namespace cis237_assignment1
                     Console.WriteLine(e.ToString());
                     Console.WriteLine();
                     Console.WriteLine(e.StackTrace);
-                    // return false because we failed
+                    // return false if things went wrong
                     return false;
                 }
 
@@ -68,9 +68,7 @@ namespace cis237_assignment1
 
             bool active = bool.Parse(parts[4]);
 
-            // write the method for this into the beverage collection class. This is what
-            // will initially populate the collection with the beverages when the list is loaded
-            // for the first time
+            // populate the list with one item
             sodaStand.AddABeverage(id, desc, pack, price, active);
         }
     }

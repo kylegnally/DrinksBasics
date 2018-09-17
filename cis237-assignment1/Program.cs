@@ -7,14 +7,13 @@ namespace cis237_assignment1
         static void Main(string[] args)
         {
             const int sodaStandSize = 4000;
-            string pathToCSV = "../../../datafiles/beverage_list_trunc.csv";
+            string pathToCSV = "../../../datafiles/beverage_list.csv";
             string menuChoice = null;
 
             UserInterface aMenu = new UserInterface();
             BeverageCollection sodaStand = new BeverageCollection(sodaStandSize);
             CSVProcessor csvProcessor = new CSVProcessor();
 
-            //csvProcessor.ImportCSV(pathToCSV, sodaStand);
             DisplayMenu();
 
             void DisplayMenu()
@@ -38,15 +37,18 @@ namespace cis237_assignment1
                         if (loadedSuccessfully)
                         {
                             Console.Write(aMenu.LoadSuccess());
+                            System.Threading.Thread.Sleep(1500);
                         }
                         else
                         {                            
                             if (csvProcessor.listIsLoaded == true)
                             {
                                 Console.Write(aMenu.AlreadyLoaded());
+                                System.Threading.Thread.Sleep(1500);
                             }
 
                             else Console.Write(aMenu.LoadFailure());
+                            System.Threading.Thread.Sleep(1500);
                         }                        
                         
                         System.Threading.Thread.Sleep(1500);
@@ -84,7 +86,6 @@ namespace cis237_assignment1
                         DisplayMenu();
                         break;
                     case "A":
-                        Console.WriteLine("\n\n\t\t\t\tYou chose to (A)dd to the beverage list.");
                         if (!csvProcessor.listIsLoaded)
                         {
                             Console.Write(aMenu.CannotAddUntilLoaded());
@@ -96,10 +97,13 @@ namespace cis237_assignment1
                             if (sodaStand.FindBeverageById(beverageToAdd[0]) == null)
                             {
                                 sodaStand.AddABeverage(beverageToAdd[0], beverageToAdd[1], beverageToAdd[2], decimal.Parse(beverageToAdd[3]), bool.Parse(beverageToAdd[4]));
+                                Console.Write(aMenu.BeverageAdded());
+                                System.Threading.Thread.Sleep(1500);
                             }
                             else
                             {
-                                aMenu.BeverageExists();
+                                Console.Write(aMenu.BeverageExists());
+                                System.Threading.Thread.Sleep(1500);
                             }
                         }                        
                         System.Threading.Thread.Sleep(1500);
