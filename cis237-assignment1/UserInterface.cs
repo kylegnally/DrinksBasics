@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace cis237_assignment1
 {
@@ -109,6 +110,14 @@ namespace cis237_assignment1
             Console.Write("\n\t\t\t\tIs this beverage (a)ctive or (i)nactive? ");
             Console.ForegroundColor = ConsoleColor.Yellow;
             string active = Console.ReadLine().ToUpper();
+
+            if (price.Contains("$"))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n\t\t\t\tPlease do not include a dollar sign ('$') in the price. ");
+                System.Threading.Thread.Sleep(3000);
+                AddABeverage();
+            }
             
             if (id == "" || desc == "" || pack == "" || price == "" || active == "")
             {
