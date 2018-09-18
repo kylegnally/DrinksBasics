@@ -44,7 +44,7 @@ namespace cis237_assignment1
         /// <summary>
         /// ToString() override method used to return a single Beverage as a string.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>string</returns>
         public override string ToString()
         {
             ItemAsString = Id + ", " + Desc + ", " + Pack + ", " + "$" + Price.ToString() + ", " + Active;

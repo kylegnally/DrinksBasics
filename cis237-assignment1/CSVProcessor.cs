@@ -34,7 +34,7 @@ namespace cis237_assignment1
         /// </summary>
         /// <param name="pathToCSV"></param>
         /// <param name="sodaStand"></param>
-        /// <returns></returns>
+        /// <returns>bool</returns>
         public bool ImportCSV(string pathToCSV, BeverageCollection sodaStand)
         {
             StreamReader streamReader = null;

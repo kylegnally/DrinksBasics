@@ -45,6 +45,7 @@ namespace cis237_assignment1
             /// user to read the output from their choice. All menu items result in some output to the user
             /// (even when the user quits the program). Success messages are output in green text, errors
             /// are output in red.
+            /// 
             void HandleInput(string userSelection)
             {
                 userSelection = userSelection.ToUpper();
@@ -74,7 +75,6 @@ namespace cis237_assignment1
                             System.Threading.Thread.Sleep(1500);
                         }                        
                         
-                        System.Threading.Thread.Sleep(1500);
                         DisplayMenu();
                         break;
                     case "P":
@@ -142,7 +142,7 @@ namespace cis237_assignment1
                         Environment.Exit(0);
                         break;
 
-                        // The default option is invoked for any choices noton the menu. This may be an invalid
+                        // The default option is invoked for any choices not on the menu. This may be an invalid
                         // entry or a blank entry. In either case, error is shown in red and the menu is simply redrawn.
                     default:
                         Console.ForegroundColor = ConsoleColor.Red;

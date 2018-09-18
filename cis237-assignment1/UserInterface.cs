@@ -5,6 +5,7 @@
  * CIS237 T/Th 330pm * 
  */
 
+using System;
 
 namespace cis237_assignment1
 {
@@ -19,7 +20,7 @@ namespace cis237_assignment1
         /// Displays the program menu.
         /// Returns the menu as a string.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>string</returns>
         public string DisplayMenu()
         {
             Console.ResetColor();
@@ -36,7 +37,7 @@ namespace cis237_assignment1
         /// <summary>
         /// Called if the beverage list is already loaded. Returns an error string.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>string</returns>
         public string AlreadyLoaded()
         {
             Console.ForegroundColor = ConsoleColor.Red;
@@ -47,7 +48,7 @@ namespace cis237_assignment1
         /// <summary>
         /// Called if the list has loaded successfully. Returns a string.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>string</returns>
         public string LoadSuccess()
         {
             Console.ForegroundColor = ConsoleColor.Green;
@@ -58,7 +59,7 @@ namespace cis237_assignment1
         /// <summary>
         /// Called if the beverage list has failed to load for some reason. Returns a string.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>string</returns>
         public string LoadFailure()
         {
             Console.ForegroundColor = ConsoleColor.Red;
@@ -69,7 +70,7 @@ namespace cis237_assignment1
         /// <summary>
         /// Called if the user tries to print a list while the list is empty. Contains a suggestion to load the list. Returns a string.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>string</returns>
         public string NothingToPrint()
         {
             Console.ForegroundColor = ConsoleColor.Red;
@@ -98,7 +99,7 @@ namespace cis237_assignment1
         /// beverage item as a string if the item was found.
         /// </summary>
         /// <param name="collection"></param>
-        /// <returns></returns>
+        /// <returns>string</returns>
         public string SearchBeverageList(BeverageCollection collection)
         {
             string foundBeverage = "";
@@ -120,7 +121,7 @@ namespace cis237_assignment1
         /// <summary>
         /// Called when the user tries to search an empty beverage list. Contains a suggestion to load the list. Returns a string.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>string</returns>
         public string NothingToSearch()
         {
             Console.ForegroundColor = ConsoleColor.Red;
@@ -134,7 +135,7 @@ namespace cis237_assignment1
         /// the Beverage class. Prevents the user from entering empty entries by restarting the process if a required param is not provided.
         /// Returns a string[].
         /// </summary>
-        /// <returns></returns>
+        /// <returns>string</returns>
         public string[] AddABeverage()
         {
             Console.Clear();
@@ -195,7 +196,7 @@ namespace cis237_assignment1
         /// <param name="pack"></param>
         /// <param name="price"></param>
         /// <param name="active"></param>
-        /// <returns></returns>
+        /// <returns>bool</returns>
         public bool EntriesAreValid(string id, string desc, string pack, string price, string active)
         {
             if (price.Contains("$"))
@@ -225,7 +226,7 @@ namespace cis237_assignment1
         /// If called, returns an error string informing the user that the beverage ID they have chosen to add already exists
         /// in the collection. Returns a string.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>string</returns>
         public string BeverageExists()
         {
             Console.ForegroundColor = ConsoleColor.Red;
@@ -237,7 +238,7 @@ namespace cis237_assignment1
         /// <summary>
         /// If called, informs the user that the beverage they have chosen to add has been successfully added to the collection. Returns a string.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>string</returns>
         public string BeverageAdded()
         {
             Console.ForegroundColor = ConsoleColor.Green;
@@ -248,7 +249,7 @@ namespace cis237_assignment1
         /// <summary>
         /// Called when the user attempts to add a beverage to the collection before the beverage list file has been loaded. Returns a string.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>string</returns>
         public string CannotAddUntilLoaded()
         {
             Console.ForegroundColor = ConsoleColor.Red;

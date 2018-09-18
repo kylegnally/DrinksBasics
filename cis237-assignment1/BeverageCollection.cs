@@ -47,7 +47,7 @@ namespace cis237_assignment1
         /// Prints the entire inventory of beverages using the ToString() override method of the Beverage class.
         /// Returns the entire inventory as a string[].
         /// </summary>
-        /// <returns></returns>
+        /// <returns>string[]</returns>
         public string[] PrintTheBeveragesInventory()
         {
             string[] allBeveragesString = new string[collectionPosition];
@@ -67,7 +67,7 @@ namespace cis237_assignment1
         /// Searches for a Beverage in the collection by its id. Returns the Beverage as a string.
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
+        /// <returns>string</returns>
         public string FindBeverageById(string id)
         {
             string foundBeverage = null;
