@@ -41,11 +41,7 @@ namespace cis237_assignment1
             /// The work done on the user's choice is done in other classes; the output is handled by the
             /// UserInterface class.
             /// 
-            /// System.Threading.Thread.Sleep(1500) is used to pause the current thread long enough for the
-            /// user to read the output from their choice. All menu items result in some output to the user
-            /// (even when the user quits the program). Success messages are output in green text, errors
-            /// are output in red.
-            /// 
+             
             void HandleInput(string userSelection)
             {
                 userSelection = userSelection.ToUpper();

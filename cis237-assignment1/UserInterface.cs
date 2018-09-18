@@ -104,7 +104,7 @@ namespace cis237_assignment1
         {
             string foundBeverage = "";
             Console.Write("\n\t\t\t\tEnter the ID of the beverage you wish to search for: ");
-            string id = Console.ReadLine();
+            string id = Console.ReadLine().ToUpper();
             if (collection.FindBeverageById(id) != null)
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
@@ -143,7 +143,7 @@ namespace cis237_assignment1
             Console.WriteLine("\n\n\n\n\t\t\t\tYou chose to (A)dd to the beverage list.");
             Console.Write("\n\t\t\t\tEnter the ID of the beverage you'd like to add: ");
             Console.ForegroundColor = ConsoleColor.Yellow;
-            string id = Console.ReadLine();            
+            string id = Console.ReadLine().ToUpper();            
             Console.ResetColor();
             Console.Write("\n\t\t\t\tEnter the description of the beverage you'd like to add: ");
             Console.ForegroundColor = ConsoleColor.Yellow;
