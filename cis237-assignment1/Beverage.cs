@@ -1,4 +1,11 @@
-﻿namespace cis237_assignment1
+﻿/* 
+ * CIS237 Assignment 1 - Beverage List
+ * 9/17/18
+ * Kyle Nally
+ * CIS237 T/Th 330pm * 
+ */
+
+namespace cis237_assignment1
 {
     /// <summary>
     /// Class to handle one beverage item. 

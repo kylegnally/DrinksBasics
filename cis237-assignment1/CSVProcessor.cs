@@ -1,4 +1,11 @@
-﻿using System;
+﻿/* 
+ * CIS237 Assignment 1 - Beverage List
+ * 9/17/18
+ * Kyle Nally
+ * CIS237 T/Th 330pm * 
+ */
+
+using System;
 using System.IO;
 
 namespace cis237_assignment1

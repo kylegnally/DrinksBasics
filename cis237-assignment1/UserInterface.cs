@@ -1,9 +1,15 @@
-﻿using System;
+﻿/* 
+ * CIS237 Assignment 1 - Beverage List
+ * 9/17/18
+ * Kyle Nally
+ * CIS237 T/Th 330pm * 
+ */
+
 
 namespace cis237_assignment1
 {
     /// <summary>
-    /// Class to provide a user interface for the user to interact with.
+    /// Class that provides a user interface for the user to interact with.
     /// </summary>
     class UserInterface
     {
@@ -88,7 +94,8 @@ namespace cis237_assignment1
         }
 
         /// <summary>
-        /// Method to search the beverage list by ID. Returns a string showing whether the item was found or not.
+        /// Method to search the beverage list by ID. Returns an error string if the beverage item was not found. Returns the
+        /// beverage item as a string if the item was found.
         /// </summary>
         /// <param name="collection"></param>
         /// <returns></returns>
@@ -123,7 +130,7 @@ namespace cis237_assignment1
         }
 
         /// <summary>
-        /// Called when the user wishes to add a new beverage to the list. Asks the user to prove each property required by the params of
+        /// Called when the user wishes to add a new beverage to the list. Asks the user to provide each property required by the params of
         /// the Beverage class. Prevents the user from entering empty entries by restarting the process if a required param is not provided.
         /// Returns a string[].
         /// </summary>
@@ -153,57 +160,72 @@ namespace cis237_assignment1
             Console.ForegroundColor = ConsoleColor.Yellow;
             string active = Console.ReadLine().ToUpper();
 
+            // call to EntriesAreValid() to ensure proper information is entered
+            if (EntriesAreValid(id, desc, pack, price, active))
+            {
+                // prepare the string to be handled correctly 
+                if (active == "A")
+                {
+                    active = "true";
+                }
+
+                if (active == "I")
+                {
+                    active = "false";
+                }
+            }
+
+            // inform the user that the information they provided cannot be correct
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n\t\t\t\tIt seems some information is missing or incorrect. " +
+                                  "\n\t\t\t\tPlease reenter your choices and try again.");
+                System.Threading.Thread.Sleep(3000);
+                AddABeverage();
+            }
+            return new string[] { id, desc, pack, price, active };
+        }
+
+        /// <summary>
+        /// Validation check. Ensures all entries are provided and that the user provided a correct active/inactive response. Returns a bool.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="desc"></param>
+        /// <param name="pack"></param>
+        /// <param name="price"></param>
+        /// <param name="active"></param>
+        /// <returns></returns>
+        public bool EntriesAreValid(string id, string desc, string pack, string price, string active)
+        {
             if (price.Contains("$"))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("\n\t\t\t\tPlease do not include a dollar sign ('$') in the price. ");
                 System.Threading.Thread.Sleep(3000);
-                AddABeverage();
+                return false;
             }
-            
+
             if (id == "" || desc == "" || pack == "" || price == "" || active == "")
             {
-                if (active != "A")
+                return false;
+            }
+
+            if (active != "A")
+            {
+                if (active != "I")
                 {
-                    if (active != "I")
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("\n\t\t\t\tIt seems some information is missing or incorrect. " +
-                            "\n\t\t\t\tPlease reenter your choices and try again.");
-                        System.Threading.Thread.Sleep(3000);
-                        AddABeverage();
-                    }
-                }                
+                    return false;
+                }
             }
-
-            if (active == "A")
-            {
-                active = "true";
-            }
-
-            if (active == "I")
-            {
-                active = "false";
-            }
-
-            return new string[] { id, desc, pack, price, active };
+            return true;
         }
-
-        //private bool GetNewBeverageActiveStatus()
-        //{
-        //    Console.ResetColor();
-        //    string answer;
-            
-        //    if (answer != "A" || answer != "I")
-        //    {
-        //        Console.ForegroundColor = ConsoleColor.Red;
-        //        Console.WriteLine("\n\t\t\t\tYou must select (a)ctive or (i)nactive. Please try again.");
-        //        GetNewBeverageActiveStatus();
-        //    }
-        //    if (answer == "A") return true;
-        //    else return false;
-        //}
-
+        
+        /// <summary>
+        /// If called, returns an error string informing the user that the beverage ID they have chosen to add already exists
+        /// in the collection. Returns a string.
+        /// </summary>
+        /// <returns></returns>
         public string BeverageExists()
         {
             Console.ForegroundColor = ConsoleColor.Red;
@@ -212,6 +234,10 @@ namespace cis237_assignment1
             return alreadyExists;
         }
 
+        /// <summary>
+        /// If called, informs the user that the beverage they have chosen to add has been successfully added to the collection. Returns a string.
+        /// </summary>
+        /// <returns></returns>
         public string BeverageAdded()
         {
             Console.ForegroundColor = ConsoleColor.Green;
@@ -219,6 +245,10 @@ namespace cis237_assignment1
             return beverageAdded;
         }
 
+        /// <summary>
+        /// Called when the user attempts to add a beverage to the collection before the beverage list file has been loaded. Returns a string.
+        /// </summary>
+        /// <returns></returns>
         public string CannotAddUntilLoaded()
         {
             Console.ForegroundColor = ConsoleColor.Red;
