@@ -8,7 +8,7 @@
 namespace cis237_assignment1
 {
     /// <summary>
-    /// Class to handle one beverage item. 
+    /// Class to handle one beverage item. Additional properties allow for future expanded search functionality.
     /// </summary>
     class Beverage
     {

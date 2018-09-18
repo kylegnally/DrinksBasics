@@ -3,7 +3,7 @@
 ## Due 09-20-2018
 
 ## Author
-
+Kyle Nally
 
 
 ## Description
@@ -101,5 +101,7 @@ Suggestion/Hints:
 | **Total**                  | **100**|
 
 ## Outside Resources Used
+cis237-inclass-1, Stack Overflow.
 
 ## Known Problems, Issues, And/Or Errors in the Program
+None.
