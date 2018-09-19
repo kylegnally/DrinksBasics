@@ -9,6 +9,9 @@ using System;
 
 namespace cis237_assignment1
 {
+    /// <summary>
+    /// Base class for the program. This is where Main() lives.
+    /// </summary>
     class Program
     {
         /// <summary>
