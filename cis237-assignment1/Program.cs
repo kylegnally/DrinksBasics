@@ -49,12 +49,12 @@ namespace cis237_assignment1
                 {
                     // Loads the beverage list. Note that this is the only location we call ImportCSV() from.
                     case "L":
-                        Console.WriteLine("\n\n\t\t\t\tYou chose to (L)oad the beverage list.");                        
+                        Console.WriteLine(aMenu.LoadListMessage());
                         bool loadedSuccessfully = csvProcessor.ImportCSV(pathToCSV, sodaStand);
                         if (loadedSuccessfully)
                         {
                             Console.Write(aMenu.LoadSuccess());
-                            System.Threading.Thread.Sleep(1500);
+                            aMenu.Pause();
                         }
                         else
                         {           
@@ -64,46 +64,46 @@ namespace cis237_assignment1
                             if (csvProcessor.listIsLoaded)
                             {
                                 Console.Write(aMenu.AlreadyLoaded());
-                                System.Threading.Thread.Sleep(1500);
+                                aMenu.Pause();
                             }
 
                             else Console.Write(aMenu.LoadFailure());
-                            System.Threading.Thread.Sleep(1500);
+                            aMenu.Pause();
                         }                        
                         
                         DisplayMenu();
                         break;
                     case "P":
                         // Print the list. Burp if the list isn't loaded yet.
-                        Console.WriteLine("\n\n\t\t\t\tYou chose to (P)rint the beverage list.\n");
+                        aMenu.PrintListMessage();
                         if (!csvProcessor.listIsLoaded)
                         {
                             Console.Write(aMenu.NothingToPrint());
-                            System.Threading.Thread.Sleep(1500);
+                            aMenu.Pause();
                         }
                         else
                         {
                             string[] allBeverages = sodaStand.PrintTheBeveragesInventory();
                             aMenu.PrintBeverageList(allBeverages);
                         }
-                        System.Threading.Thread.Sleep(1500);
+                        aMenu.Pause();
                         DisplayMenu();
 
                         break;
                     case "S":
                         // Search the list. Burp if the list isn't loaded yet.
-                        Console.WriteLine("\n\n\t\t\t\tYou chose to (S)earch the beverage list.");
+                        aMenu.SearchListMessage();
                         if (!csvProcessor.listIsLoaded)
                         {
                             Console.Write(aMenu.NothingToSearch());
-                            System.Threading.Thread.Sleep(1500);
+                            aMenu.Pause();
                         }
 
                         else
                         {
                             Console.Write(aMenu.SearchBeverageList(sodaStand));
                         }                        
-                        System.Threading.Thread.Sleep(1500);
+                        aMenu.Pause();
                         DisplayMenu();
                         break;
                     case "A":
@@ -111,7 +111,7 @@ namespace cis237_assignment1
                         if (!csvProcessor.listIsLoaded)
                         {
                             Console.Write(aMenu.CannotAddUntilLoaded());
-                            System.Threading.Thread.Sleep(1500);
+                            aMenu.Pause();
                         }
                         else
                         {
@@ -120,21 +120,21 @@ namespace cis237_assignment1
                             {
                                 sodaStand.AddABeverage(beverageToAdd[0], beverageToAdd[1], beverageToAdd[2], decimal.Parse(beverageToAdd[3]), bool.Parse(beverageToAdd[4]));
                                 Console.Write(aMenu.BeverageAdded());
-                                System.Threading.Thread.Sleep(1500);
+                                aMenu.Pause();
                             }
                             else
                             {
                                 Console.Write(aMenu.BeverageExists());
-                                System.Threading.Thread.Sleep(1500);
+                                aMenu.Pause();
                             }
                         }                        
-                        System.Threading.Thread.Sleep(1500);
+                        aMenu.Pause();
                         DisplayMenu();
                         break;
                         // Quit the program. Quits regardless of whether the list is loaded. Never burps.
                     case "Q":
-                        Console.WriteLine("\n\n\t\t\t\tExiting program.");
-                        System.Threading.Thread.Sleep(1500);
+                        aMenu.QuitProgramMessage();
+                        aMenu.Pause();
                         Environment.Exit(0);
                         break;
 
@@ -142,10 +142,9 @@ namespace cis237_assignment1
                         // entry or a blank entry. In either case, error is shown in red and the menu is simply redrawn.
                     default:
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("\n\n\t\t\t\tInvalid option. Please select a valid option from the menu.");
-                        System.Threading.Thread.Sleep(1500);
+                        aMenu.InvalidOptionMessage();
+                        aMenu.Pause();
                         DisplayMenu();
-                        Environment.Exit(0);
                         break;
                 }
             }            

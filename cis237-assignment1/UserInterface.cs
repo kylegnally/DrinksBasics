@@ -35,6 +35,61 @@ namespace cis237_assignment1
         }
 
         /// <summary>
+        /// Message displayed when the user loads the beverage list.
+        /// </summary>
+        /// <returns>string</returns>
+        public string LoadListMessage()
+        {
+            string loadListMessage = "\n\n\t\t\t\tYou chose to (L)oad the beverage list.";
+            Pause();
+            return loadListMessage;
+        }
+
+        /// <summary>
+        /// Message displayed when the user prints the beverage list.
+        /// </summary>
+        /// <returns>string</returns>
+        public string PrintListMessage()
+        {
+            string printListMessage = "\n\n\t\t\t\tYou chose to (P)rint the beverage list.";
+            Pause();
+            return printListMessage;
+        }
+
+        /// <summary>
+        /// Message displayed when the user searches the beverage list.
+        /// </summary>
+        /// <returns>string</returns>
+        public string SearchListMessage()
+        {
+            string searchListMessage = "\n\n\t\t\t\tYou chose to (S)earch the beverage list.";
+            Pause();
+            return searchListMessage;
+        }
+
+        /// <summary>
+        /// Message displayed when the user exits the program.
+        /// </summary>
+        /// <returns>string</returns>
+        public string QuitProgramMessage()
+        {
+            string searchListMessage = "\n\n\t\t\t\tExiting program.";
+            Pause();
+            return searchListMessage;
+        }
+
+        /// <summary>
+        /// Message displayed when the user selects an invalid menu option.
+        /// </summary>
+        /// <returns>string</returns>
+        public string InvalidOptionMessage()
+        {
+            string invalidOption = "\n\n\t\t\t\tInvalid option. Please select a valid option from the menu.";
+            Pause();
+            return invalidOption;
+        }
+
+        /// <summary>
         /// Called if the beverage list is already loaded. Returns an error string.
         /// </summary>
         /// <returns>string</returns>
@@ -256,6 +311,11 @@ namespace cis237_assignment1
             string addError = "\n\t\t\t\tThe list is empty. You cannot add to the list until it is loaded.";
             addError += "\n\t\t\t\tLoad the beverage list first, then try to add a new item again.";
             return addError;
+        }
+
+        public void Pause()
+        {
+            System.Threading.Thread.Sleep(1500);
         }
     }
 }
