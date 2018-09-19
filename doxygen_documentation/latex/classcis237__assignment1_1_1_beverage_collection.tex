@@ -1,0 +1,103 @@
+\hypertarget{classcis237__assignment1_1_1_beverage_collection}{}\section{cis237\+\_\+assignment1.\+Beverage\+Collection Class Reference}
+\label{classcis237__assignment1_1_1_beverage_collection}\index{cis237\+\_\+assignment1.\+Beverage\+Collection@{cis237\+\_\+assignment1.\+Beverage\+Collection}}
+
+
+\mbox{\hyperlink{classcis237__assignment1_1_1_beverage}{Beverage}} collection class. Handles adding a beverage to the collection, printing the beverage inventory, and searching for a beverage by its ID. Future search functionality such as a Find\+Beverage\+By\+Name() method should be implemented here (this functionality is already supported by the \mbox{\hyperlink{classcis237__assignment1_1_1_beverage}{Beverage}} class).  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcis237__assignment1_1_1_beverage_collection_a1077d1f45e8d7598030edda4d6a983d9}{Beverage\+Collection}} (int collection\+Size)
+\begin{DoxyCompactList}\small\item\em Creates a new beverages array of type \mbox{\hyperlink{classcis237__assignment1_1_1_beverage}{Beverage}} and of the size passed into it. Sets the initial position of the array counter to 0 (the beginning of the array). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcis237__assignment1_1_1_beverage_collection_af43e6534911fe09ae409050b058d36c0}{Add\+A\+Beverage}} (string id, string desc, string pack, decimal price, bool active)
+\begin{DoxyCompactList}\small\item\em Adds a beverage to the collection. Note that collection\+Position is always incremented by 1 after adding a new beverage to ensure the new beverage is always added at the end of the collection. \end{DoxyCompactList}\item 
+string \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classcis237__assignment1_1_1_beverage_collection_a730618da76f49a594eab4ecb9ea980ea}{Print\+The\+Beverages\+Inventory}} ()
+\begin{DoxyCompactList}\small\item\em Prints the entire inventory of beverages using the To\+String() override method of the \mbox{\hyperlink{classcis237__assignment1_1_1_beverage}{Beverage}} class. Returns the entire inventory as a string\mbox{[}\mbox{]}. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classcis237__assignment1_1_1_beverage_collection_ac743d0681003ef2c6c5110f3897525bb}{Find\+Beverage\+By\+Id}} (string id)
+\begin{DoxyCompactList}\small\item\em Searches for a \mbox{\hyperlink{classcis237__assignment1_1_1_beverage}{Beverage}} in the collection by its id. Returns the \mbox{\hyperlink{classcis237__assignment1_1_1_beverage}{Beverage}} as a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{classcis237__assignment1_1_1_beverage}{Beverage}} collection class. Handles adding a beverage to the collection, printing the beverage inventory, and searching for a beverage by its ID. Future search functionality such as a Find\+Beverage\+By\+Name() method should be implemented here (this functionality is already supported by the \mbox{\hyperlink{classcis237__assignment1_1_1_beverage}{Beverage}} class). 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcis237__assignment1_1_1_beverage_collection_a1077d1f45e8d7598030edda4d6a983d9}\label{classcis237__assignment1_1_1_beverage_collection_a1077d1f45e8d7598030edda4d6a983d9}} 
+\index{cis237\+\_\+assignment1\+::\+Beverage\+Collection@{cis237\+\_\+assignment1\+::\+Beverage\+Collection}!Beverage\+Collection@{Beverage\+Collection}}
+\index{Beverage\+Collection@{Beverage\+Collection}!cis237\+\_\+assignment1\+::\+Beverage\+Collection@{cis237\+\_\+assignment1\+::\+Beverage\+Collection}}
+\subsubsection{\texorpdfstring{Beverage\+Collection()}{BeverageCollection()}}
+{\footnotesize\ttfamily cis237\+\_\+assignment1.\+Beverage\+Collection.\+Beverage\+Collection (\begin{DoxyParamCaption}\item[{int}]{collection\+Size }\end{DoxyParamCaption})}
+
+
+
+Creates a new beverages array of type \mbox{\hyperlink{classcis237__assignment1_1_1_beverage}{Beverage}} and of the size passed into it. Sets the initial position of the array counter to 0 (the beginning of the array). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em collection\+Size} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcis237__assignment1_1_1_beverage_collection_af43e6534911fe09ae409050b058d36c0}\label{classcis237__assignment1_1_1_beverage_collection_af43e6534911fe09ae409050b058d36c0}} 
+\index{cis237\+\_\+assignment1\+::\+Beverage\+Collection@{cis237\+\_\+assignment1\+::\+Beverage\+Collection}!Add\+A\+Beverage@{Add\+A\+Beverage}}
+\index{Add\+A\+Beverage@{Add\+A\+Beverage}!cis237\+\_\+assignment1\+::\+Beverage\+Collection@{cis237\+\_\+assignment1\+::\+Beverage\+Collection}}
+\subsubsection{\texorpdfstring{Add\+A\+Beverage()}{AddABeverage()}}
+{\footnotesize\ttfamily void cis237\+\_\+assignment1.\+Beverage\+Collection.\+Add\+A\+Beverage (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{string}]{desc,  }\item[{string}]{pack,  }\item[{decimal}]{price,  }\item[{bool}]{active }\end{DoxyParamCaption})}
+
+
+
+Adds a beverage to the collection. Note that collection\+Position is always incremented by 1 after adding a new beverage to ensure the new beverage is always added at the end of the collection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \\
+\hline
+{\em desc} & \\
+\hline
+{\em pack} & \\
+\hline
+{\em price} & \\
+\hline
+{\em active} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcis237__assignment1_1_1_beverage_collection_ac743d0681003ef2c6c5110f3897525bb}\label{classcis237__assignment1_1_1_beverage_collection_ac743d0681003ef2c6c5110f3897525bb}} 
+\index{cis237\+\_\+assignment1\+::\+Beverage\+Collection@{cis237\+\_\+assignment1\+::\+Beverage\+Collection}!Find\+Beverage\+By\+Id@{Find\+Beverage\+By\+Id}}
+\index{Find\+Beverage\+By\+Id@{Find\+Beverage\+By\+Id}!cis237\+\_\+assignment1\+::\+Beverage\+Collection@{cis237\+\_\+assignment1\+::\+Beverage\+Collection}}
+\subsubsection{\texorpdfstring{Find\+Beverage\+By\+Id()}{FindBeverageById()}}
+{\footnotesize\ttfamily string cis237\+\_\+assignment1.\+Beverage\+Collection.\+Find\+Beverage\+By\+Id (\begin{DoxyParamCaption}\item[{string}]{id }\end{DoxyParamCaption})}
+
+
+
+Searches for a \mbox{\hyperlink{classcis237__assignment1_1_1_beverage}{Beverage}} in the collection by its id. Returns the \mbox{\hyperlink{classcis237__assignment1_1_1_beverage}{Beverage}} as a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcis237__assignment1_1_1_beverage_collection_a730618da76f49a594eab4ecb9ea980ea}\label{classcis237__assignment1_1_1_beverage_collection_a730618da76f49a594eab4ecb9ea980ea}} 
+\index{cis237\+\_\+assignment1\+::\+Beverage\+Collection@{cis237\+\_\+assignment1\+::\+Beverage\+Collection}!Print\+The\+Beverages\+Inventory@{Print\+The\+Beverages\+Inventory}}
+\index{Print\+The\+Beverages\+Inventory@{Print\+The\+Beverages\+Inventory}!cis237\+\_\+assignment1\+::\+Beverage\+Collection@{cis237\+\_\+assignment1\+::\+Beverage\+Collection}}
+\subsubsection{\texorpdfstring{Print\+The\+Beverages\+Inventory()}{PrintTheBeveragesInventory()}}
+{\footnotesize\ttfamily string \mbox{[}$\,$\mbox{]} cis237\+\_\+assignment1.\+Beverage\+Collection.\+Print\+The\+Beverages\+Inventory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints the entire inventory of beverages using the To\+String() override method of the \mbox{\hyperlink{classcis237__assignment1_1_1_beverage}{Beverage}} class. Returns the entire inventory as a string\mbox{[}\mbox{]}. 
+
+\begin{DoxyReturn}{Returns}
+string\mbox{[}\mbox{]}
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kyleg/\+Documents/\+My Classes/cis237/cis237-\/assignment-\/1-\/kylegnally/cis237-\/assignment1/Beverage\+Collection.\+cs\end{DoxyCompactItemize}

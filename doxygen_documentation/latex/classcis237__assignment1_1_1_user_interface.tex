@@ -1,0 +1,316 @@
+\hypertarget{classcis237__assignment1_1_1_user_interface}{}\section{cis237\+\_\+assignment1.\+User\+Interface Class Reference}
+\label{classcis237__assignment1_1_1_user_interface}\index{cis237\+\_\+assignment1.\+User\+Interface@{cis237\+\_\+assignment1.\+User\+Interface}}
+
+
+Class that provides a user interface for the user to interact with.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classcis237__assignment1_1_1_user_interface_a4c596eb4768351f879321d998fa061d1}{Display\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Displays the program menu. Returns the menu as a string. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classcis237__assignment1_1_1_user_interface_ab3f195aca19d4ab98715cdf59c1c680e}{Load\+List\+Message}} ()
+\begin{DoxyCompactList}\small\item\em Message displayed when the user loads the beverage list. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classcis237__assignment1_1_1_user_interface_a2fabe9b6f45b02aabae6b3c38113a067}{Print\+List\+Message}} ()
+\begin{DoxyCompactList}\small\item\em Message displayed when the user prints the beverage list. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classcis237__assignment1_1_1_user_interface_ab8bc1e39de3fd3d489341898c9f75f74}{Search\+List\+Message}} ()
+\begin{DoxyCompactList}\small\item\em Message displayed when the user searches the beverage list. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classcis237__assignment1_1_1_user_interface_a877886018059a084dc5afbbd381ba1ee}{Quit\+Program\+Message}} ()
+\begin{DoxyCompactList}\small\item\em Message displayed when the user exits the program. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classcis237__assignment1_1_1_user_interface_acffbb418c1b3cc9d769b69bb982b3ef5}{Invalid\+Option\+Message}} ()
+\begin{DoxyCompactList}\small\item\em Message displayed when the user selects an invalid menu option. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classcis237__assignment1_1_1_user_interface_af853881254332538367bd2c1c4f0863b}{Already\+Loaded}} ()
+\begin{DoxyCompactList}\small\item\em Called if the beverage list is already loaded. Returns an error string. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classcis237__assignment1_1_1_user_interface_ad22b617e9f2ba982bc30cbc54625ebf4}{Load\+Success}} ()
+\begin{DoxyCompactList}\small\item\em Called if the list has loaded successfully. Returns a string. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classcis237__assignment1_1_1_user_interface_ad98fa4f4aec22bc39001ac4b38878e07}{Load\+Failure}} ()
+\begin{DoxyCompactList}\small\item\em Called if the beverage list has failed to load for some reason. Returns a string. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classcis237__assignment1_1_1_user_interface_a471a3579977248afe6d8264b947bad90}{Nothing\+To\+Print}} ()
+\begin{DoxyCompactList}\small\item\em Called if the user tries to print a list while the list is empty. Contains a suggestion to load the list. Returns a string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcis237__assignment1_1_1_user_interface_aa68d91ed4cb610c4565aa1cbd099236f}{Print\+Beverage\+List}} (string\mbox{[}$\,$\mbox{]} all\+Beverages)
+\begin{DoxyCompactList}\small\item\em Method to print the beverage list. Writes each line to the length of the beverage list. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classcis237__assignment1_1_1_user_interface_a687a3aae278e699e9bab5366cce43857}{Search\+Beverage\+List}} (\mbox{\hyperlink{classcis237__assignment1_1_1_beverage_collection}{Beverage\+Collection}} collection)
+\begin{DoxyCompactList}\small\item\em Method to search the beverage list by ID. Returns an error string if the beverage item was not found. Returns the beverage item as a string if the item was found. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classcis237__assignment1_1_1_user_interface_a4d6169ff838896b9c1fbfb66e7f76277}{Nothing\+To\+Search}} ()
+\begin{DoxyCompactList}\small\item\em Called when the user tries to search an empty beverage list. Contains a suggestion to load the list. Returns a string. \end{DoxyCompactList}\item 
+string \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classcis237__assignment1_1_1_user_interface_a8b294cabd2f460f19d95b561ae753cb3}{Add\+A\+Beverage}} ()
+\begin{DoxyCompactList}\small\item\em Called when the user wishes to add a new beverage to the list. Asks the user to provide each property required by the params of the \mbox{\hyperlink{classcis237__assignment1_1_1_beverage}{Beverage}} class. Prevents the user from entering empty entries by restarting the process if a required param is not provided. Returns a string\mbox{[}\mbox{]}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classcis237__assignment1_1_1_user_interface_a5dfa59efbf489e19fdfdcb3256585765}{Entries\+Are\+Valid}} (string id, string desc, string pack, string price, string active)
+\begin{DoxyCompactList}\small\item\em Validation check. Ensures all entries are provided and that the user provided a correct active/inactive response. Returns a bool. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classcis237__assignment1_1_1_user_interface_a92f48423127fe73a71276bd17c5c412b}{Beverage\+Exists}} ()
+\begin{DoxyCompactList}\small\item\em If called, returns an error string informing the user that the beverage ID they have chosen to add already exists in the collection. Returns a string. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classcis237__assignment1_1_1_user_interface_a5462865cff47575686db71af7d2f3d1d}{Beverage\+Added}} ()
+\begin{DoxyCompactList}\small\item\em If called, informs the user that the beverage they have chosen to add has been successfully added to the collection. Returns a string. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classcis237__assignment1_1_1_user_interface_adf27c135e56034fb6ed53a75d0f4d507}{Cannot\+Add\+Until\+Loaded}} ()
+\begin{DoxyCompactList}\small\item\em Called when the user attempts to add a beverage to the collection before the beverage list file has been loaded. Returns a string. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcis237__assignment1_1_1_user_interface_afa3d205f993f2603d8338183a5b50b4c}\label{classcis237__assignment1_1_1_user_interface_afa3d205f993f2603d8338183a5b50b4c}} 
+void {\bfseries Pause} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that provides a user interface for the user to interact with. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcis237__assignment1_1_1_user_interface_a8b294cabd2f460f19d95b561ae753cb3}\label{classcis237__assignment1_1_1_user_interface_a8b294cabd2f460f19d95b561ae753cb3}} 
+\index{cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}!Add\+A\+Beverage@{Add\+A\+Beverage}}
+\index{Add\+A\+Beverage@{Add\+A\+Beverage}!cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}}
+\subsubsection{\texorpdfstring{Add\+A\+Beverage()}{AddABeverage()}}
+{\footnotesize\ttfamily string \mbox{[}$\,$\mbox{]} cis237\+\_\+assignment1.\+User\+Interface.\+Add\+A\+Beverage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Called when the user wishes to add a new beverage to the list. Asks the user to provide each property required by the params of the \mbox{\hyperlink{classcis237__assignment1_1_1_beverage}{Beverage}} class. Prevents the user from entering empty entries by restarting the process if a required param is not provided. Returns a string\mbox{[}\mbox{]}. 
+
+\begin{DoxyReturn}{Returns}
+string
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcis237__assignment1_1_1_user_interface_af853881254332538367bd2c1c4f0863b}\label{classcis237__assignment1_1_1_user_interface_af853881254332538367bd2c1c4f0863b}} 
+\index{cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}!Already\+Loaded@{Already\+Loaded}}
+\index{Already\+Loaded@{Already\+Loaded}!cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}}
+\subsubsection{\texorpdfstring{Already\+Loaded()}{AlreadyLoaded()}}
+{\footnotesize\ttfamily string cis237\+\_\+assignment1.\+User\+Interface.\+Already\+Loaded (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Called if the beverage list is already loaded. Returns an error string. 
+
+\begin{DoxyReturn}{Returns}
+string
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcis237__assignment1_1_1_user_interface_a5462865cff47575686db71af7d2f3d1d}\label{classcis237__assignment1_1_1_user_interface_a5462865cff47575686db71af7d2f3d1d}} 
+\index{cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}!Beverage\+Added@{Beverage\+Added}}
+\index{Beverage\+Added@{Beverage\+Added}!cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}}
+\subsubsection{\texorpdfstring{Beverage\+Added()}{BeverageAdded()}}
+{\footnotesize\ttfamily string cis237\+\_\+assignment1.\+User\+Interface.\+Beverage\+Added (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+If called, informs the user that the beverage they have chosen to add has been successfully added to the collection. Returns a string. 
+
+\begin{DoxyReturn}{Returns}
+string
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcis237__assignment1_1_1_user_interface_a92f48423127fe73a71276bd17c5c412b}\label{classcis237__assignment1_1_1_user_interface_a92f48423127fe73a71276bd17c5c412b}} 
+\index{cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}!Beverage\+Exists@{Beverage\+Exists}}
+\index{Beverage\+Exists@{Beverage\+Exists}!cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}}
+\subsubsection{\texorpdfstring{Beverage\+Exists()}{BeverageExists()}}
+{\footnotesize\ttfamily string cis237\+\_\+assignment1.\+User\+Interface.\+Beverage\+Exists (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+If called, returns an error string informing the user that the beverage ID they have chosen to add already exists in the collection. Returns a string. 
+
+\begin{DoxyReturn}{Returns}
+string
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcis237__assignment1_1_1_user_interface_adf27c135e56034fb6ed53a75d0f4d507}\label{classcis237__assignment1_1_1_user_interface_adf27c135e56034fb6ed53a75d0f4d507}} 
+\index{cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}!Cannot\+Add\+Until\+Loaded@{Cannot\+Add\+Until\+Loaded}}
+\index{Cannot\+Add\+Until\+Loaded@{Cannot\+Add\+Until\+Loaded}!cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}}
+\subsubsection{\texorpdfstring{Cannot\+Add\+Until\+Loaded()}{CannotAddUntilLoaded()}}
+{\footnotesize\ttfamily string cis237\+\_\+assignment1.\+User\+Interface.\+Cannot\+Add\+Until\+Loaded (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Called when the user attempts to add a beverage to the collection before the beverage list file has been loaded. Returns a string. 
+
+\begin{DoxyReturn}{Returns}
+string
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcis237__assignment1_1_1_user_interface_a4c596eb4768351f879321d998fa061d1}\label{classcis237__assignment1_1_1_user_interface_a4c596eb4768351f879321d998fa061d1}} 
+\index{cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}!Display\+Menu@{Display\+Menu}}
+\index{Display\+Menu@{Display\+Menu}!cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}}
+\subsubsection{\texorpdfstring{Display\+Menu()}{DisplayMenu()}}
+{\footnotesize\ttfamily string cis237\+\_\+assignment1.\+User\+Interface.\+Display\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays the program menu. Returns the menu as a string. 
+
+\begin{DoxyReturn}{Returns}
+string
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcis237__assignment1_1_1_user_interface_a5dfa59efbf489e19fdfdcb3256585765}\label{classcis237__assignment1_1_1_user_interface_a5dfa59efbf489e19fdfdcb3256585765}} 
+\index{cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}!Entries\+Are\+Valid@{Entries\+Are\+Valid}}
+\index{Entries\+Are\+Valid@{Entries\+Are\+Valid}!cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}}
+\subsubsection{\texorpdfstring{Entries\+Are\+Valid()}{EntriesAreValid()}}
+{\footnotesize\ttfamily bool cis237\+\_\+assignment1.\+User\+Interface.\+Entries\+Are\+Valid (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{string}]{desc,  }\item[{string}]{pack,  }\item[{string}]{price,  }\item[{string}]{active }\end{DoxyParamCaption})}
+
+
+
+Validation check. Ensures all entries are provided and that the user provided a correct active/inactive response. Returns a bool. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \\
+\hline
+{\em desc} & \\
+\hline
+{\em pack} & \\
+\hline
+{\em price} & \\
+\hline
+{\em active} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcis237__assignment1_1_1_user_interface_acffbb418c1b3cc9d769b69bb982b3ef5}\label{classcis237__assignment1_1_1_user_interface_acffbb418c1b3cc9d769b69bb982b3ef5}} 
+\index{cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}!Invalid\+Option\+Message@{Invalid\+Option\+Message}}
+\index{Invalid\+Option\+Message@{Invalid\+Option\+Message}!cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}}
+\subsubsection{\texorpdfstring{Invalid\+Option\+Message()}{InvalidOptionMessage()}}
+{\footnotesize\ttfamily string cis237\+\_\+assignment1.\+User\+Interface.\+Invalid\+Option\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Message displayed when the user selects an invalid menu option. 
+
+\begin{DoxyReturn}{Returns}
+string
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcis237__assignment1_1_1_user_interface_ad98fa4f4aec22bc39001ac4b38878e07}\label{classcis237__assignment1_1_1_user_interface_ad98fa4f4aec22bc39001ac4b38878e07}} 
+\index{cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}!Load\+Failure@{Load\+Failure}}
+\index{Load\+Failure@{Load\+Failure}!cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}}
+\subsubsection{\texorpdfstring{Load\+Failure()}{LoadFailure()}}
+{\footnotesize\ttfamily string cis237\+\_\+assignment1.\+User\+Interface.\+Load\+Failure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Called if the beverage list has failed to load for some reason. Returns a string. 
+
+\begin{DoxyReturn}{Returns}
+string
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcis237__assignment1_1_1_user_interface_ab3f195aca19d4ab98715cdf59c1c680e}\label{classcis237__assignment1_1_1_user_interface_ab3f195aca19d4ab98715cdf59c1c680e}} 
+\index{cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}!Load\+List\+Message@{Load\+List\+Message}}
+\index{Load\+List\+Message@{Load\+List\+Message}!cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}}
+\subsubsection{\texorpdfstring{Load\+List\+Message()}{LoadListMessage()}}
+{\footnotesize\ttfamily string cis237\+\_\+assignment1.\+User\+Interface.\+Load\+List\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Message displayed when the user loads the beverage list. 
+
+\begin{DoxyReturn}{Returns}
+string
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcis237__assignment1_1_1_user_interface_ad22b617e9f2ba982bc30cbc54625ebf4}\label{classcis237__assignment1_1_1_user_interface_ad22b617e9f2ba982bc30cbc54625ebf4}} 
+\index{cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}!Load\+Success@{Load\+Success}}
+\index{Load\+Success@{Load\+Success}!cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}}
+\subsubsection{\texorpdfstring{Load\+Success()}{LoadSuccess()}}
+{\footnotesize\ttfamily string cis237\+\_\+assignment1.\+User\+Interface.\+Load\+Success (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Called if the list has loaded successfully. Returns a string. 
+
+\begin{DoxyReturn}{Returns}
+string
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcis237__assignment1_1_1_user_interface_a471a3579977248afe6d8264b947bad90}\label{classcis237__assignment1_1_1_user_interface_a471a3579977248afe6d8264b947bad90}} 
+\index{cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}!Nothing\+To\+Print@{Nothing\+To\+Print}}
+\index{Nothing\+To\+Print@{Nothing\+To\+Print}!cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}}
+\subsubsection{\texorpdfstring{Nothing\+To\+Print()}{NothingToPrint()}}
+{\footnotesize\ttfamily string cis237\+\_\+assignment1.\+User\+Interface.\+Nothing\+To\+Print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Called if the user tries to print a list while the list is empty. Contains a suggestion to load the list. Returns a string. 
+
+\begin{DoxyReturn}{Returns}
+string
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcis237__assignment1_1_1_user_interface_a4d6169ff838896b9c1fbfb66e7f76277}\label{classcis237__assignment1_1_1_user_interface_a4d6169ff838896b9c1fbfb66e7f76277}} 
+\index{cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}!Nothing\+To\+Search@{Nothing\+To\+Search}}
+\index{Nothing\+To\+Search@{Nothing\+To\+Search}!cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}}
+\subsubsection{\texorpdfstring{Nothing\+To\+Search()}{NothingToSearch()}}
+{\footnotesize\ttfamily string cis237\+\_\+assignment1.\+User\+Interface.\+Nothing\+To\+Search (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Called when the user tries to search an empty beverage list. Contains a suggestion to load the list. Returns a string. 
+
+\begin{DoxyReturn}{Returns}
+string
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcis237__assignment1_1_1_user_interface_aa68d91ed4cb610c4565aa1cbd099236f}\label{classcis237__assignment1_1_1_user_interface_aa68d91ed4cb610c4565aa1cbd099236f}} 
+\index{cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}!Print\+Beverage\+List@{Print\+Beverage\+List}}
+\index{Print\+Beverage\+List@{Print\+Beverage\+List}!cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}}
+\subsubsection{\texorpdfstring{Print\+Beverage\+List()}{PrintBeverageList()}}
+{\footnotesize\ttfamily void cis237\+\_\+assignment1.\+User\+Interface.\+Print\+Beverage\+List (\begin{DoxyParamCaption}\item[{string \mbox{[}$\,$\mbox{]}}]{all\+Beverages }\end{DoxyParamCaption})}
+
+
+
+Method to print the beverage list. Writes each line to the length of the beverage list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em all\+Beverages} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcis237__assignment1_1_1_user_interface_a2fabe9b6f45b02aabae6b3c38113a067}\label{classcis237__assignment1_1_1_user_interface_a2fabe9b6f45b02aabae6b3c38113a067}} 
+\index{cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}!Print\+List\+Message@{Print\+List\+Message}}
+\index{Print\+List\+Message@{Print\+List\+Message}!cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}}
+\subsubsection{\texorpdfstring{Print\+List\+Message()}{PrintListMessage()}}
+{\footnotesize\ttfamily string cis237\+\_\+assignment1.\+User\+Interface.\+Print\+List\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Message displayed when the user prints the beverage list. 
+
+\begin{DoxyReturn}{Returns}
+string
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcis237__assignment1_1_1_user_interface_a877886018059a084dc5afbbd381ba1ee}\label{classcis237__assignment1_1_1_user_interface_a877886018059a084dc5afbbd381ba1ee}} 
+\index{cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}!Quit\+Program\+Message@{Quit\+Program\+Message}}
+\index{Quit\+Program\+Message@{Quit\+Program\+Message}!cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}}
+\subsubsection{\texorpdfstring{Quit\+Program\+Message()}{QuitProgramMessage()}}
+{\footnotesize\ttfamily string cis237\+\_\+assignment1.\+User\+Interface.\+Quit\+Program\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Message displayed when the user exits the program. 
+
+\begin{DoxyReturn}{Returns}
+string
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcis237__assignment1_1_1_user_interface_a687a3aae278e699e9bab5366cce43857}\label{classcis237__assignment1_1_1_user_interface_a687a3aae278e699e9bab5366cce43857}} 
+\index{cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}!Search\+Beverage\+List@{Search\+Beverage\+List}}
+\index{Search\+Beverage\+List@{Search\+Beverage\+List}!cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}}
+\subsubsection{\texorpdfstring{Search\+Beverage\+List()}{SearchBeverageList()}}
+{\footnotesize\ttfamily string cis237\+\_\+assignment1.\+User\+Interface.\+Search\+Beverage\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcis237__assignment1_1_1_beverage_collection}{Beverage\+Collection}}}]{collection }\end{DoxyParamCaption})}
+
+
+
+Method to search the beverage list by ID. Returns an error string if the beverage item was not found. Returns the beverage item as a string if the item was found. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em collection} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcis237__assignment1_1_1_user_interface_ab8bc1e39de3fd3d489341898c9f75f74}\label{classcis237__assignment1_1_1_user_interface_ab8bc1e39de3fd3d489341898c9f75f74}} 
+\index{cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}!Search\+List\+Message@{Search\+List\+Message}}
+\index{Search\+List\+Message@{Search\+List\+Message}!cis237\+\_\+assignment1\+::\+User\+Interface@{cis237\+\_\+assignment1\+::\+User\+Interface}}
+\subsubsection{\texorpdfstring{Search\+List\+Message()}{SearchListMessage()}}
+{\footnotesize\ttfamily string cis237\+\_\+assignment1.\+User\+Interface.\+Search\+List\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Message displayed when the user searches the beverage list. 
+
+\begin{DoxyReturn}{Returns}
+string
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/kyleg/\+Documents/\+My Classes/cis237/cis237-\/assignment-\/1-\/kylegnally/cis237-\/assignment1/User\+Interface.\+cs\end{DoxyCompactItemize}
