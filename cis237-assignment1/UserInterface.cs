@@ -70,6 +70,7 @@ namespace cis237_assignment1
         /// <returns>string</returns>
         public string QuitProgramMessage()
         {
+            Console.ForegroundColor = ConsoleColor.Red;
             string searchListMessage = "\n\n\t\t\t\tExiting program.";
             return searchListMessage;
         }
@@ -80,6 +81,7 @@ namespace cis237_assignment1
         /// <returns>string</returns>
         public string InvalidOptionMessage()
         {
+            Console.ForegroundColor = ConsoleColor.Red;
             string invalidOption = "\n\n\t\t\t\tInvalid option. Please select a valid option from the menu.";
             return invalidOption;
         }

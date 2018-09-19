@@ -136,7 +136,6 @@ namespace cis237_assignment1
                         break;
                         // Quit the program. Quits regardless of whether the list is loaded. Never burps.
                     case "Q":
-                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine(aMenu.QuitProgramMessage());
                         aMenu.Pause();
                         Environment.Exit(0);
@@ -145,7 +144,6 @@ namespace cis237_assignment1
                         // The default option is invoked for any choices not on the menu. This may be an invalid
                         // entry or a blank entry. In either case, error is shown in red and the menu is simply redrawn.
                     default:
-                        Console.ForegroundColor = ConsoleColor.Red;
                         aMenu.InvalidOptionMessage();
                         aMenu.Pause();
                         DisplayMenu();
