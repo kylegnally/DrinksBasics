@@ -136,6 +136,7 @@ namespace cis237_assignment1
                         break;
                         // Quit the program. Quits regardless of whether the list is loaded. Never burps.
                     case "Q":
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine(aMenu.QuitProgramMessage());
                         aMenu.Pause();
                         Environment.Exit(0);
