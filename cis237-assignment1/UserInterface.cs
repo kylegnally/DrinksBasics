@@ -41,7 +41,6 @@ namespace cis237_assignment1
         public string LoadListMessage()
         {
             string loadListMessage = "\n\n\t\t\t\tYou chose to (L)oad the beverage list.";
-            Pause();
             return loadListMessage;
         }
 
@@ -52,7 +51,6 @@ namespace cis237_assignment1
         public string PrintListMessage()
         {
             string printListMessage = "\n\n\t\t\t\tYou chose to (P)rint the beverage list.";
-            Pause();
             return printListMessage;
         }
 
@@ -63,7 +61,6 @@ namespace cis237_assignment1
         public string SearchListMessage()
         {
             string searchListMessage = "\n\n\t\t\t\tYou chose to (S)earch the beverage list.";
-            Pause();
             return searchListMessage;
         }
 
@@ -74,7 +71,6 @@ namespace cis237_assignment1
         public string QuitProgramMessage()
         {
             string searchListMessage = "\n\n\t\t\t\tExiting program.";
-            Pause();
             return searchListMessage;
         }
 
@@ -85,7 +81,6 @@ namespace cis237_assignment1
         public string InvalidOptionMessage()
         {
             string invalidOption = "\n\n\t\t\t\tInvalid option. Please select a valid option from the menu.";
-            Pause();
             return invalidOption;
         }
 
