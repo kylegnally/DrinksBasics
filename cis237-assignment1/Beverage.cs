@@ -47,8 +47,8 @@ namespace cis237_assignment1
         /// <returns>string</returns>
         public override string ToString()
         {
-            ItemAsString = Id + ", " + Desc + ", " + Pack + ", " + "$" + Price.ToString() + ", " + Active;
-            return ItemAsString;
+            string beverageString = Id + ", " + Desc + ", " + Pack + ", " + "$" + Price.ToString() + ", " + Active;
+            return beverageString;
         }
 
         /// <summary>
@@ -76,9 +76,5 @@ namespace cis237_assignment1
         /// </summary>
         public string Active { get; set; }
 
-        /// <summary>
-        /// Single beverage item (string data type).
-        /// </summary>
-        public string ItemAsString { get; set; }
     }
 }
