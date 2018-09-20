@@ -255,7 +255,7 @@ namespace cis237_assignment1
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("\n\t\t\t\tPlease do not include a dollar sign ('$') in the price. ");
-                System.Threading.Thread.Sleep(3000);
+                Pause();
                 return false;
             }
 
