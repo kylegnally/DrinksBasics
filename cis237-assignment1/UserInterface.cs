@@ -310,6 +310,9 @@ namespace cis237_assignment1
             return addError;
         }
 
+        /// <summary>
+        /// Pauses execution by putting the currently running thread to sleep for 1500ms.
+        /// </summary>
         public void Pause()
         {
             System.Threading.Thread.Sleep(1500);
